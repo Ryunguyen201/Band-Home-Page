@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Band</title>
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlS3LyIfNL00KpaX7kdlunoAkQs0NjuhzgMx-bwk8R_Ez6vKl_MGHsQuojiKO8l9tBjOQ&usqp=CAU" type="image/x-icon" />
+    <link rel="stylesheet" href="The_Band.css">
+    <link rel="stylesheet" href="respoinsive.css">
+    <link rel="stylesheet" href="/baihoc/Theme_Icon/themify-icons-font/themify-icons/themify-icons.css">
+</head>
+<body>
+    <div id="main">
+        <!-- Tạo nhiều thẻ div: #(tên id), .(tên class)-->
+        <div id="header">
+            <!-- Tạo nhiều thẻ ul(#(tên id) .(Tên class), 5 thẻ li và thẻ a): ul#nav>li*5>a -->
+            <ul id="nav">                
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#band">Ban</a></li>
+                    <li><a href="#tour">Tour</a></li>
+                    <li><a href="#contact">Contac</a></li>
+                    <li>
+                        <a href="#">
+                            More
+                            <!-- Tạo Icon mũi tên xuống (nên đặt class đổi tên ez) -->
+                            <i class="nav-down ti-angle-down"></i>
+                        </a>
+                        <ul class="subnav">
+                            <li><a href="#">Merchandise</a></li>
+                            <li><a href="#">Extras</a></li>
+                            <li><a href="#">Media</a></li>
+                        </ul>                         
+                    </li>            
+            </ul>
+            <!-- End nav -->
+            <!-- Mobile menu button (dấu 3 xẹt) -->
+            <div id="mobile-menu" class="mobile-menu-btn">
+                <i class="menu-icon ti-menu"></i>
+            </div>
+
+            <!-- Search button -->
+            <div class="search-btn">
+                <i class="search-icon ti-search"></i>
+            </div>
+
+        </div>
+
+        <div id="slider">
+            <div class="text-conten">
+                <h2 class="text-heading">Amazing</h2>
+                <h2 class="text-discription">Professtional Spective</h2>
+            </div>  
+        </div>
+        <div id="conten">
+            <!-- Dùng 1 class chung cho nhiều thành phần chung -->
+            <!-- About Sectiom -->
+            <div id="band" class="content-section">
+                <p class="section-handing">The Band</p>
+                <p class="section-sub-heading">We Love Music</p>
+                <p class="about-conten">
+                    We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+                <div class="row member-list">
+                    <div class="col col-third s-col-full mt-32 text-center">
+                        <p class="member-name">Name</p>
+                        <img src="/baihoc/image/Hutao-Hmm.jpg" alt="" class="member-img">
+                    </div>
+                    
+                    <div class="col col-third s-col-full mt-32 text-center">
+                        <p class="member-name">Name</p>
+                        <img src="/baihoc/image/Hutao-Hmm.jpg" alt="" class="member-img">
+                    </div>
+                    
+                    <div class="col col-third s-col-full mt-32 text-center">
+                        <p class="member-name">Name</p>
+                        <img src="/baihoc/image/Hutao-Hmm.jpg" alt="" class="member-img">
+                    </div>                   
+                </div>
+            </div>
+
+            <!-- Tour Section -->
+            <div id="tour" class="tour-section">
+                <div class="content-section">
+                    <h2 class="section-handing text-white">TOUR DATES</h2>
+                    <p class="section-sub-heading text-white">Remember to book your tickets!</p>
+                    
+                    <!-- Ticket -->
+                    <ul class="ticket-list">
+                        <li>September <span class="sold-out">Sold-out</span></li>
+                        <li>October <span class="october">Sold-out</span></li>
+                        <li>November <span class="quantiti">3</span></li>
+                    </ul>
+
+                    <!-- Places -->
+                    <div class="row places-list">
+                        <div class="col col-third s-col-full mt-16">
+                            <img src="/baihoc/image/The_band/Contact/contact-1.jpg" alt="" class="places-img">
+                            <div class="places-body">
+                                <h3 class="places-heading">New York</h3>
+                                <p class="places-time">Fri 27 now 2016</p>
+                                <p class="places-desc">Praesent tincidunt sed tellus ut rutrum sed viae justo.</p>
+                                <!-- Dấu # ở đây là trong trang này (ko bị chuyển đi) -->
+                                <button class="btn s-full-wigth js-buy-ticket">Buy Tickets</button>                       
+                            </div>
+                        </div>
+
+                        <div class="col col-third s-col-full mt-16">
+                            <img src="/baihoc/image/The_band/Contact/contact-1.jpg" alt="" class="places-img">
+                            <div class="places-body">
+                                <h3 class="places-heading">New York</h3>
+                                <p class="places-time">Fri 27 now 2016</p>
+                                <p class="places-desc">Praesent tincidunt sed tellus ut rutrum sed viae justo.</p>
+                                <!-- Dấu # ở đây là trong trang này (ko bị chuyển đi) -->
+                                <button class="btn s-full-wigth js-buy-ticket">Buy Tickets</button>                       
+                            </div>
+                        </div>
+
+                        <div class="col col-third s-col-full mt-16">
+                            <img src="/baihoc/image/The_band/Contact/contact-1.jpg" alt="" class="places-img">
+                            <div class="places-body">
+                                <h3 class="places-heading">New York</h3>
+                                <p class="places-time">Fri 27 now 2016</p>
+                                <p class="places-desc">Praesent tincidunt sed tellus ut rutrum sed viae justo.</p>
+                                <!-- Dấu # ở đây là trong trang này (ko bị chuyển đi) -->
+                                <button class="btn s-full-wigth js-buy-ticket">Buy Tickets</button>                       
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Begin: Contact Section -->
+            <div id="contact" class="content-section">
+                <p class="section-handing">CONTACT</p>
+                <p class="section-sub-heading">Fan? Drop a note!</p>
+                <div class="row contact-content">
+                    <div class="col col-half s-col-full contact-info">
+                        <p><i class="ti-location-pin"></i>Chicago, US</p>
+                        <p><i class="ti-mobile"></i>Phone: <a href="tel:+00 151515">+00 151515</a></p>
+                        <p><i class="ti-email"></i>Email: <a href="mailto:mail@mail.com">mail@gmail.com</a></p>
+                    </div>
+                    <div class="col col-half s-col-full contact-form">
+                        <form action="">
+                            <div class="row">
+                                <div class="col col-half s-col-full">
+                                    <!-- required dùng để nhận diện khi nhấn vào button, chỗ nào để trống thì trỏ vào chỗ đó -->
+                                    <input type="text" name="" placeholder="Name" required id="" class="form-control">
+                                </div>
+                                <div class="col col-half s-col-full s-mt-8">
+                                    <input type="email" name="" placeholder="Email" required id="" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row mt-8">
+                                <div class="col col-full">
+                                    <input type="text" name="" placeholder="Message" required id="" class="form-control">
+                                </div>
+                            </div>
+                            <input class="contact-submit-btn btn pull-right mt-16 s-full-wigth" type="submit" required value="SEND">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!--End: Contact Section -->
+
+            <div class="map-section">
+                <img src="/baihoc/image/map/Map-band.jpg" alt="Map" class="img"></div>
+        </div>
+        <div id="footer">
+            <div class="socials-list">
+                <a href=""><i class="ti-facebook"></i></a>
+                <a href=""><i class="ti-instagram"></i></a>
+                <a href=""><i class="ti-youtube"></i></a>
+                <a href=""><i class="ti-pinterest"></i></a>
+                <a href=""><i class="ti-twitter"></i></a>
+                <a href=""><i class="ti-linkedin"></i></a>
+            </div>
+            <p class="copyright">Powered by <a href="https://www.youtube.com/">w3.css</a></p>
+        </div>
+        <!-- Phần tạo giao diện nền -->
+        <div class="modal js-modal">
+            <div class="modal-container js-modal-container">
+                <div class="modal-close js-modal-close">
+                    <i class="close1 ti-close"></i>
+                </div>
+                <!-- Header -->
+                <header class="modal-header">
+                    <i class="bag1 ti-bag"></i>   
+                    Tickets                
+                </header>
+                <!-- Body -->
+                <div class="modal-body">
+                    <!-- Tiêu đề trên input 1 -->
+                    <lable for="ticket-qqq" class="modal-lable">
+                        <i class="ti-shopping-cart"></i>
+                        Tickets, $15 per person
+                    </lable>
+                    <input id="ticket-qqq" type="text" class="modal-input" placeholder="How many?">
+                    <!-- Tiêu đề trên input 2 -->
+                    <lable for="ticket-email" class="modal-lable">
+                        <i class="ti-user"></i>
+                        Send to
+                    </lable>
+                    <input id="ticket-email" type="text" class="modal-input" placeholder="Enter email...">
+                    <!-- Button Pay -->
+                    <button id="buy-tickets">
+                        Pay <i class="ti-check"></i>
+                    </button>                    
+                </div>
+                <!-- Need và help -->
+                <footer class="modal-footer">
+                    <p class="modal-help">Need <a href="">help</a>?</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // querySelectorAll: lấy tất cả các selecter trùng
+        const buyBtns = document.querySelectorAll('.js-buy-ticket')
+        // Lấy 1 elerment : modal
+        const modal = document.querySelector('.js-modal')
+        const modalContainer = document.querySelector('.js-modal-container')
+        const modalClose = document.querySelector('.js-modal-close') 
+        
+        //Mở giao diện đã ẩn
+        function showBuyTichKet(){
+            // thêm class open vào phía sau class modal: modol open
+            modal.classList.add('open')
+        }
+
+        //Đóng giao diện xuất hiện
+        function closeBuyTichKet(){
+            // gỡ bỏ class open của modal: modol open
+            modal.classList.remove('open')
+        }
+        
+        // Lấy từng nút (chạy 3 lần tương ứng với 3 nút) trong danh sách - hành động - kết quả
+        for (const buyBnt of buyBtns) {
+            buyBnt.addEventListener('click', showBuyTichKet)
+        }
+        
+        // Lắng nghe hành vi click vào button close
+        modalClose.addEventListener('click', closeBuyTichKet)
+
+        // Click vào khoản không của modal thì sẽ đóng buy-ticket
+        modal.addEventListener('click',closeBuyTichKet)
+
+        //Ngừng nổi bọt từ modalContainer - có thể viết thằng function vào và ko cần đặt tên
+        modalContainer.addEventListener('click', function (event) {
+            event.stopImmediatePropagation()
+        })
+    </script>
+    <script>
+        var header = document.getElementById('header');
+        var mobileMenu = document.getElementById('mobile-menu');
+        var headerHeight = header.clientHeight;
+        
+        // Đóng mở Mobile menu
+        mobileMenu.onclick = function() {
+            var isClosed = header.clientHeight === headerHeight;
+            if (isClosed) {
+                // Nếu đang đóng(chiều cao 46) thì sẽ thành mở (chiều cao 230, tự động lấy dựa vào content)
+                header.style.height = 'auto';
+            } else {
+                header.style.height = null;               
+            }
+        }
+
+        // Tự động đóng menu khi chọn các mục
+        var menuItems = document.querySelectorAll('#nav li a[href*="#"]');
+        console.log(menuItems)
+        for (var i = 0; i < menuItems.length; i++) {
+            var menuItem = menuItems[i];
+            // Cái anh chị em tiếp theo liền kề
+            // console.log(menuItem.nextElementSibling);
+            
+            // Mỗi click vào đối tượng trong function thì trả về một đối số (event)
+            menuItem.onclick = function(event) {
+                var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');                
+                // In ra chính nó khi bấm vào
+                // console.log(this)
+                if (isParentMenu) {
+                    // bỏ qua cái mặc định (mặc định thẻ a có "#" )
+                    event.preventDefault();
+                } else {
+                    // Nếu không phải isParentMenu thì mới ẩn
+                    header.style.height = null;
+                }
+            }
+        }   
+    </script>
+</body>
+</html>
