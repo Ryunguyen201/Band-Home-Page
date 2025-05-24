@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="bem_lv2.css">
+</head>
+<body>
+    <div id="toast">
+        <!-- Success -->
+        <!-- <div class="toast toast--seccess">
+            <div class="toast__icon">
+                <i class="fa-sharp fa-regular fa-circle-check"></i>
+            </div>
+            <div class="toast__body">
+                <h3 class="toast__title">Success</h3>
+                <p class="toast__msg">một trong những cảnh fighting hiếm hoi của truyện Shelock Holmes!</p>
+            </div>
+            <div class="toast__close">
+                <i class="fa-sharp fa-regular fa-circle-xmark"></i>
+            </div>
+        </div> -->
+
+        <!-- Info -->
+        <!-- <div class="toast toast--info">
+            <div class="toast__icon">
+                <i class="fa-sharp fa-regular fa-circle-check"></i>
+            </div>
+            <div class="toast__body">
+                <h3 class="toast__title">Info</h3>
+                <p class="toast__msg">một trong những cảnh fighting hiếm hoi của truyện Shelock Holmes!</p>
+            </div>
+            <div class="toast__close">
+                <i class="fa-sharp fa-regular fa-circle-xmark"></i>
+            </div>
+        </div> -->
+
+        <!-- Warning -->
+        <!-- <div class="toast toast--warning">
+            <div class="toast__icon">
+                <i class="fa-sharp fa-regular fa-circle-check"></i>
+            </div>
+            <div class="toast__body">
+                <h3 class="toast__title">Warning</h3>
+                <p class="toast__msg">một trong những cảnh fighting hiếm hoi của truyện Shelock Holmes!</p>
+            </div>
+            <div class="toast__close">
+                <i class="fa-sharp fa-regular fa-circle-xmark"></i>
+            </div>
+        </div> -->
+
+        <!-- Erorr -->
+        <!-- <div class="toast toast--erorr">
+            <div class="toast__icon">
+                <i class="fa-sharp fa-regular fa-circle-check"></i>
+            </div>
+            <div class="toast__body">
+                <h3 class="toast__title">Erorr</h3>
+                <p class="toast__msg">một trong những cảnh fighting hiếm hoi của truyện Shelock Holmes!</p>
+            </div>
+            <div class="toast__close">
+                <i class="fa-sharp fa-regular fa-circle-xmark"></i>
+            </div>
+        </div> -->
+    </div>
+
+    <div>
+        <div onclick="showSuccessToast();" class="btn btn--sucess">Show sucess toast</div>
+        <div onclick="showErorrToast();" class="btn btn--danger">Show erorr toast</div>
+    </div>
+
+    <script>
+        // Toast funtion
+        function toast({
+            title = '', 
+            message = '', 
+            type = '', 
+            duration=3000,
+        }) {
+            // Lấy tên ID thẻ cha
+            const main = document.getElementById('toast')
+            // Kiếm tra nế có
+            if (main) {
+                // Tạo thẻ div
+                const toast = document.createElement('div');
+
+                //Auto remove toast. Sau một khoản duration (1s) thì gỡ thông báo (bên phải) đi
+                const autoRemoveID = setTimeout(function() {
+                    main.removeChild(toast);
+                }, duration + 1000);
+
+                //Remove toast when clicked. Bắt sự kiện nút close đóng thông báo
+                toast.onclick = function(e) {
+                    // Tìm class của chính nó xem nó có class này hay ko, nếu ko có nữa thì tìm ra thẻ cha
+                    if (e.target.closest('.toast__close')) {
+                        main.removeChild(toast);
+                        // Khi bấm click thì clear timeout
+                        clearTimeout(autoRemove)
+                    }
+                }
+                // thay đổi icon
+                const icons = {
+                    seccess: 'fa-sharp fa-regular fa-circle-check',
+                    info: 'fa-sharp fa-solid fa-circle-info',
+                    warning: 'fa-sharp fa-solid fa-circle-exclamation',
+                    erorr: 'fa-sharp fa-solid fa-circle-exclamation',
+                };
+                // Lấy icon tương tương
+                const icon = icons[type];
+                // Tạo hàm delay toFix: lấy 2 số dư
+                const delay = (duration / 1000).toFixed(2);
+                // Tạo class toast toast--sucess
+                toast.classList.add('toast', `toast--${type}`);
+                // Animation
+                toast.style.animation =`slineInLeft ease .3s, fadeOut linear 1s ${delay}s forwards`;
+                // Tạo thẻ html
+                toast.innerHTML = `
+                <div class="toast__icon">
+                    <i class="${icon}"></i>
+                </div>
+                <div class="toast__body">
+                    <h3 class="toast__title">${title}</h3>
+                    <p class="toast__msg">${message}</p>
+                </div>
+                <div class="toast__close">
+                    <i class="fa-sharp fa-regular fa-circle-xmark"></i>
+                </div>
+                `;
+                main.appendChild(toast);               
+            }
+        }       
+
+        // Gán dữ liệu
+        // toast({
+        //     title: 'success',
+        //     message: 'Kết nối thành công đến thư viện community',
+        //     type: 'warning',
+        //     duration: 3000
+        // });
+
+        // Sự kiên click
+        function showSuccessToast() {
+            toast({
+                title: 'Thành công',
+                message: 'Bạn đã đăng nhập thành công',
+                type: 'seccess',
+                duration: 1000,
+            });
+        }
+        function showErorrToast() {
+            toast({
+                title: 'Thất bại',
+                message: 'Đăng nhập thất bại.',
+                type: 'erorr',
+                duration: 1000,
+            });
+        }
+    </script>
+
+</body>
+</html>

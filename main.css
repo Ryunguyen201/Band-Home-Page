@@ -1,0 +1,15 @@
+.box{
+    width: 60px;
+    height: 60px;
+    color: rgb(91, 80, 80);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+a::after{
+    content: "("attr(href)")";
+}
+.box::after{
+    content: attr(data-title);
+}
+

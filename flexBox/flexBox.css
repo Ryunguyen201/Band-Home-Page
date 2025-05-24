@@ -1,0 +1,245 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #ccc;
+}
+
+/* Navbar */
+.nav {
+    min-height: 42px;
+    background-color: #EF5122;
+    display: flex;
+    /* Đẩy các items cách xa nhau ra (từ giữa) dính sát vào trái và phải */
+    justify-content: space-between;
+}
+
+.nav-list {
+    padding-left: 0;
+    margin: auto 16px;
+}
+
+.nav-item {
+    color: #fff;
+    list-style: none;
+    margin: 0 8px;
+    display: inline-block;
+}
+
+/* Form layout */
+.form-container {
+    max-width: 720px;
+    padding: 32px;
+    margin: 36px auto 0 auto;
+    background-color: #fff;
+}
+
+.form__row {
+    padding: 8px 0;
+    /* bổ sung: inline-flex chế độ sử dụng inline-flex trên cùng 1 hàng */
+    display: flex;
+}
+
+.form__label {
+    min-width: 90px;
+}
+
+.form__input {
+    /* Nếu có 1 đối tượng thì đối tượng đó sẽ cố chiếm hết không gian có thể chiếm được */
+    flex: 1;
+}
+
+/* Column layout */
+.column-layout {
+    margin-top: 36px;
+    padding: 12px 0;
+    background-color: #fff;
+    display: flex;
+}
+
+.column-item {
+    padding: 0 16px;
+}
+
+/* Order dùng để thay đổi vị trí hiển thị của flex-ieam
+    Số càng thấp đứng càng gần main start càng lớn càng gần main end */
+.sidebar-one {
+    flex: 1;
+    order: 1
+}
+
+.sidebar-two {
+    flex: 1;
+    order: 3
+}
+
+.main-column {
+    /* Lớn hơn gấp 3 hai bên còn lại */
+    flex: 3;
+    order:2;
+}
+
+/* Feature layout */
+.feature-layout {
+    margin-top: 36px;
+    display: flex;
+    flex-direction: column;
+    /* Khác với bettwen là có 2 khoảng trống ngoài cùng (gtrị bằng 1/2 ở giữa) */
+    /* Bonus: space-evenly -> tất cả khoảng trống đều bằng nhau */
+    justify-content: space-around;
+
+}
+
+/* PC, tablet  */
+@media (min-width: 740px) {
+    .feature-layout {
+        flex-direction: row;
+    }
+}
+
+/* PC, Tablet */
+@media (min-width: 740px) {
+    .feature-layout {
+    }
+}
+
+.feature-item {
+    padding: 12px 16px;
+    margin-top: 16px;
+    /* Set kích thước main side, thừa ra 10% cho khoảng trống ở giữa 3 side */
+    flex-basis: 30%;
+}
+
+.feature-item:nth-child(1) {
+    background-color: rgb(192, 227, 222);
+}
+
+.feature-item:nth-child(2) {
+    background-color: rgb(227, 200, 192);
+}
+
+.feature-item:nth-child(3) {
+    background-color: rgb(226, 192, 227);
+}
+
+/* Wrap layout */
+.wrap-layout {
+    background-color: #fff;
+    margin-top: 36px;
+    padding: 12px 0 32px 0;
+    display: flex;
+    justify-content: space-around;
+    /* Khi co màn hình lại thì các ô 1 2 3... tự động xuống hàng */
+    /* Bonus: wrap-reverse -> lên dòng (đổi chiều cross assit) */
+    flex-wrap: wrap ;
+}
+
+.wrap-layout__item {
+    width: 148px;
+    height: 90px;
+    color: #fff;
+    text-align: center;
+    line-height: 90px;
+    font-size: 48px;
+    font-weight: 700;
+    margin-top: 20px;
+    background-color: #EF5122;
+}
+
+/* Center layout */
+.center-layout {
+    background-color: rgb(192, 227, 194);
+    margin: 36px auto 0 auto;
+    padding: 32px 0;
+    max-width: 640px;
+    height: 360px;
+    display: flex;
+    /* Căn giữa cả chiều cao và chiều ngang */
+    margin: auto;
+}
+
+.center-layout__item {
+    font-size: 42px;
+    font-weight: 700;
+}
+
+/* Chart layout */
+.chart-layout {
+    margin: 36px auto 0 auto;
+    padding: 32px 0;
+    height: 320px;
+    background-color: #fff;
+    display: flex;
+    /* Đổi chiều từ dưới lên trên, tương tự align-self  */
+    align-items: flex-end;
+    justify-content: space-around;
+}
+
+.chart-layout__item {
+    width: 60px;
+    color: #fff;
+    text-align: center;
+    /* --prcent được hiểu như biến local, mỗi biến này sẽ tự nhận giá 
+        trị riêng của biến đó vd: --percent: 10% -> 10% */
+    height: var(--percent);
+    background-color: #EF5122;
+     /* Chuyển động (tên, kiểu chuyển động: từ từ, nhanh..., thời gian) */
+     animation: growth ease-in 0.5s;
+}
+
+/* Lớn dần lên */
+@keyframes growth {
+    from {
+        opacity: 0;
+        /* tính toán (giá trị ban đầu - 50%) */
+        height: calc(var(--percent) - 50%)
+    }
+    /* Chuyển động từ từ đến giá trị ta truyền vào */
+    to {
+        opacity: 1;
+        height: 100%;
+    }
+}
+
+/* End */
+.the-end {
+    margin: 12px auto 48px auto;
+    padding: 32px 0;
+    max-width: 740px;
+    min-height: 360px;
+    display: flex;
+}
+
+.the-end__first {
+    padding: 4px 16px;
+    background-color: #fff;
+    flex: 1;
+}
+
+.the-end__second {
+    flex: 1;
+    display: flex;
+    /*Mặc định chiều ngang flex-dire... -> row đổi -> chiều dọc */  
+    /* bonus :column-reverse: đảo ngược vị trí hai đối tượng, tương tự với nhiều chức năng khác */
+    flex-direction: column;
+}
+
+.the-end__second-one {
+    flex: 1;
+    padding: 4px 16px;
+    background-color: rgb(227, 192, 214);
+}
+
+.the-end__second-two {
+    flex: 1;
+    padding: 4px 16px;
+    background-color: rgb(192, 210, 227);
+}

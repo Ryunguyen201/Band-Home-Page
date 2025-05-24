@@ -1,0 +1,46 @@
+<!-- https://fullstack.edu.vn/learning/html-css?id=7f032ce8-71ac-4598-9564-5c24ad42ab11 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .image {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!--1. Resolution switching: Different sizes -->
+    <!-- <img
+        srcset="
+                /baihoc/image/avatar100x100.jpg 100w, 
+                /baihoc/image/avart200x200.jpg 200w, 
+                /baihoc/image/avatar400x400.jpg 400w 
+        "
+        sizes="(max-width: 575px) 100px, (max-width: 991px) 200px, 400px"
+        src="/baihoc/image/avatar400x400.jpg"
+        alt="Elva dressed as a fairy"
+        /> -->
+     
+    <!-- 2. Resolution switching: Same size, diferent resolution tập trung vào DPR không tập trung vào kích thước -->
+    <!-- <img 
+        srcset="/baihoc/image/avart200x200.jpg 1x, /baihoc/image/avatar400x400.jpg 2x"
+        src="/baihoc/image/avatar400x400.jpg" 
+        alt=""
+    /> -->
+    <!--3. Art direction  -->
+    <picture>
+        <!-- Nhiều ảnh có thể dùng nhiều thẻ source -->
+        <source
+            media="(max-width: 575px)"
+            srcset="/baihoc/image/41character.jpg"
+        />
+        <img
+            src="/baihoc/image/41.jpg"
+            alt="Chris standing up holding his daughter Elva"
+        />
+    </picture>
+</body>
+</html>

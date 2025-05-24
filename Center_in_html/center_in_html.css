@@ -1,0 +1,41 @@
+.box1{
+    background-color: aqua;
+    height: 100px;
+    /* text-align: center;  */      /*để cho nhiều h con*/   
+    display: flex;
+    align-items: center ;           /*Căn giữa theo chiều dọc, căn giữa Item*/                 
+    /* justify-content: center;      Căn giữa và dính sát item vào nhau */
+    /*justify-content: space-around; chức năng giống display: flex và line-height       */
+    justify-content: space-between; /*Căn giữa các item nhưng hai item ngoài cùng dính sát vào trong*/
+}
+/*Kế thừa*/
+h1{
+    /* text-align: center;     Căn giữa */
+    /* line-height: 100px;     Căn giữa chiều cao dòng */
+    /* margin: auto; */
+}
+.box{
+    background-color: aqua;
+    height: 200px;
+    position: relative;
+    display: flex;
+    
+}
+h3 {
+    position: relative;
+    /* top: 50%; */
+    /* left: 50%; */
+    margin: auto;
+    /* transform: translate(-50%, -50%);                   Lúc nào cũng căn giữa dù top left .. .. có thay đổi */
+    /* border-left: 3px solid #333;            Tạo vạch ngăn cách */
+    /* padding-left: 8px; */
+}
+h3::after {
+    position: absolute;
+    left: -10px;
+    content: "";
+    border-left: 3px solid #333;
+    height: 50px;                       /*Có thể đổi chiều cao thoải mái mà ko ảnh hưởng*/
+    top: 50%;
+    transform: translateY(-50%);
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE baihoc>
+<html>
+    <head>
+        <title>Bài Học</title>  
+        <meta charset="utf-8">
+        <style>
+            html{
+                font-size: 20px;
+            }
+            .box:hover{                    /*hover dùng để lia chuột vào (đổi màu)*/           
+                background-color: rgb(184, 223, 129);     
+            }
+            h1:active{                     /*active dùng để click chuột vào (đổi màu)*/  
+                color: red;
+            }
+            li:first-child{                 /*first-child (tập con đầu tiên)  (đổi màu)*/
+                color: blueviolet;
+            }
+            li:last-child{
+                color: aqua;            /*last-child (tập con cuối cùng)  (đổi màu)*/
+                font-size: 20px;
+            }
+            h2::selection{                 /*selection (sự lựa chọn)  (đổi màu)*/
+                background-color: violet;
+                color: rgb(204, 23, 23);
+            }
+            .box {                          /*Box chung*/
+                width: 60px;
+                height: 660px;
+                color: #000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                /*float: left;                /*Đưa các box về cùng một hàng*/
+            }
+
+            .box1{
+                background-color: aqua;
+            }
+            .box2{
+                background-color: blue;
+                margin-left: 20px ;         /*Lùi về bên trái*/
+            }
+            .box3{
+                background-color: blueviolet;
+                /* padding-top: 10px;          đệm thêm (một khoản màu tím) lên trên 10px
+                padding-left: 10px;
+                padding-right: 10px;
+                padding-bottom: 10px; */
+                /* hoặc */
+                padding: 20px 20px 20px 20px;                  /*Đệm ra toàn bộ (trên,phải, dưới, trái theo chiều kim đồng hồ (làm dày box3 lên, thay đổi kích thước box)*/
+                border-top: 10px solid #333;                 /*Đệm ra toàn bộ (bên ngoài padding) cách viết ngắn (viết dài khá giống padding) (làm dày box3 lên, thay đổi kích thước box)*/
+                border-left: 0px solid #333;
+                margin: 10px 10px 10px 10px ;                   /*Không đệm ra bên ngoài (thay đổi vị trí của box giống kéo thả) không thay đổi kích thước box)*/
+            }
+            .box4 {
+                width: 100px;
+                height: 100px;
+                color: #fff;
+                background-color: darkviolet;
+                padding: 10px;
+                border: 2px solid #333;               
+                box-sizing: border-box;                         /*Thay đổi sao cho hợp với content*/
+                /*box-sizing: content-box; mặc định*/
+            }
+           </style>
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <div class ="box" data-title="Backround"></div>
+        <a href="laptrinh.vn.edu.com">Học lập trình</a>
+        <h1>CSS FUNTION</h1>
+        <h2>Bài học</h2>
+        <div class="box box1">Box1</div>
+        <div class="box box2">Box2</div>
+        <div class="box box3">Box3</div>
+        <div class="box4">Đây là nội dung bài viết</div>
+        <ul>
+            <li>:1</li>
+            <li>:2</li>
+            <li>:3</li>
+        </ul>    
+    </body>
+</html>

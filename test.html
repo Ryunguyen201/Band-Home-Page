@@ -1,0 +1,31 @@
+<?php 
+    require "connectdatabase.php"
+?>
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-with, initial-scale=1.0">
+    <title> them sua xoa</title>
+</head>
+<body>
+    <table border= "1" align="center">
+        <tr>
+            <th>id<th>
+            <th>name<th>
+            <th>date of birht<th>
+            <th>sdt<th>
+            <th>address<th>
+        </tr>
+        <?php
+            $sql = "SELECT *FROM dlbn";
+            $qr = mysqli_query($sql);
+            while($row = mysql_fetch_array($qr)){
+        ?>
+        <tr>
+        </tr>
+        <?php }?>
+    </table>
+</body>
+</html>
+

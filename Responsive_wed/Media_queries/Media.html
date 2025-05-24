@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Queries</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        h1 {
+          font-size: 80px;
+        }
+        .td1,
+        .td2,
+        .td3 {
+            font-size: 60px;
+            display: none;
+        }
+
+        /*       BREAK POINT        */
+
+        /* Chỉ chạy khi điều kiện đúng, độ rộng tối đa 800px, 801 ko chạy (0-800), >=1024 */
+        /*PC  */
+        @media (min-width: 1024px) {
+            .td1 {
+                display: flex;
+            }
+        }
+
+        /* Độ rộng tối thiểu 800px, 800px thì chạy */
+        /* Tablet */
+        @media (min-width: 741px) and (max-width:1023px) {
+            .td2 {
+                display: flex;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 740px) {
+            .td3 {
+                display: flex;
+            }
+        }
+
+        /*
+            PC: >=1024px
+            Tablet: >= 740px & <1024 px
+            Mobile: < 740px
+         */
+
+    </style>
+</head>
+<body>
+    <h1 class="media">Media</h1>
+    <h2 class="td1">Tiêu đề 1 333333333333333333333333</h2>
+    <h2 class="td2">Tiêu đề 2 333333333333333333333333</h2>
+    <h2 class="td3">Tiêu đề 3 333333333333333333333333</h2>
+</body>
+</html>
